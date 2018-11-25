@@ -27,6 +27,7 @@ namespace Hangman_New
                 string usedstring;
                 string wordstring;
                 string opt;
+                char guess;
                 bool won = false;
 
                 //Used to generate a list of chars from the generated word
@@ -40,13 +41,7 @@ namespace Hangman_New
                 for (int x = 1; x < 7; x++)
                 {
                     Console.Clear();
-                    Console.WriteLine();
-                    centerText("██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗");
-                    centerText("██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║");
-                    centerText("███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║");
-                    centerText("██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║");
-                    centerText("██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║");
-                    centerText("╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝");
+                    drawSplash();
 
                     //Checks if there are any chars in usedchars, needs to be at least 1
                     if (usedchars.Any())
@@ -93,8 +88,18 @@ namespace Hangman_New
                     //Input guess from the user
                     if (won == false)
                     {
-                        Console.Write("\n\nEnter character guess: ");
-                        char guess = Char.Parse(Console.ReadLine());
+                        while (true)
+                        {
+                            Console.Write("\n\nEnter character guess: ");
+                            string guessString = Console.ReadLine();
+                            if (!char.TryParse(guessString, out guess))
+                            {
+                                Console.WriteLine("'{0}' is not a character", guessString);
+                            }
+                            else
+                                break;
+                        }
+
                         usedchars.Add(guess);
                     }
                 }
@@ -112,12 +117,21 @@ namespace Hangman_New
                     Console.ReadLine();
                 }
 
-                //Checks if the player wants to play again
-                Console.Clear();
-                Console.Write("Do you want to play again? Y or N: ");
-                opt = Console.ReadLine();
-                if (opt.ToUpper() == "N")
-                    Environment.Exit(0);
+                while (true)
+                {
+                    //Checks if the player wants to play again
+                    Console.Clear();
+                    Console.Write("Do you want to play again? Y or N: ");
+                    opt = Console.ReadLine();
+
+                    if (opt.ToUpper() == "N")
+                        Environment.Exit(0);
+                    //Checks if the input is invalid
+                    else if (opt.ToUpper() != "Y" && opt.ToUpper() != "N")
+                    {
+                        Console.WriteLine("Error! Invalid input");
+                    }
+                }
             }
         }
 
@@ -154,6 +168,17 @@ namespace Hangman_New
             Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (textToEnter.Length / 2)) + "}", textToEnter));
 
             return "";
+        }
+
+        static void drawSplash()
+        {
+            Console.WriteLine();
+            centerText("██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗");
+            centerText("██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║");
+            centerText("███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║");
+            centerText("██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║");
+            centerText("██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║");
+            centerText("╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝");
         }
 
         //Draws the hangman ascii

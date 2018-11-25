@@ -6,3 +6,11 @@ C:\Users\drewr\Desktop\QE\Computer Science\Projects\Hangman_New\Hangman_New\obj\
 C:\Users\drewr\Desktop\QE\Computer Science\Projects\Hangman_New\Hangman_New\obj\Debug\Hangman_New.csproj.CoreCompileInputs.cache
 C:\Users\drewr\Desktop\QE\Computer Science\Projects\Hangman_New\Hangman_New\obj\Debug\Hangman_New.exe
 C:\Users\drewr\Desktop\QE\Computer Science\Projects\Hangman_New\Hangman_New\obj\Debug\Hangman_New.pdb
+C:\Users\drewr\Source\Repos\nosbor2001\Hangman\Hangman_New\Hangman_New\bin\Debug\words.txt
+C:\Users\drewr\Source\Repos\nosbor2001\Hangman\Hangman_New\Hangman_New\bin\Debug\Hangman_New.exe.config
+C:\Users\drewr\Source\Repos\nosbor2001\Hangman\Hangman_New\Hangman_New\bin\Debug\Hangman_New.exe
+C:\Users\drewr\Source\Repos\nosbor2001\Hangman\Hangman_New\Hangman_New\bin\Debug\Hangman_New.pdb
+C:\Users\drewr\Source\Repos\nosbor2001\Hangman\Hangman_New\Hangman_New\obj\Debug\Hangman_New.csproj.CoreCompileInputs.cache
+C:\Users\drewr\Source\Repos\nosbor2001\Hangman\Hangman_New\Hangman_New\obj\Debug\Hangman_New.exe
+C:\Users\drewr\Source\Repos\nosbor2001\Hangman\Hangman_New\Hangman_New\obj\Debug\Hangman_New.pdb
+C:\Users\drewr\Source\Repos\nosbor2001\Hangman\Hangman_New\Hangman_New\obj\Debug\Hangman_New.csprojAssemblyReference.cache
